@@ -1,24 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SecondKadaiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0f-BG-0LR">
+                                <rect key="frame" x="76.5" y="144" width="261" height="24"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8h-qc-LkB">
+                                <rect key="frame" x="152" y="403" width="110" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="入力完了"/>
+                                <connections>
+                                    <segue destination="n24-ot-Md8" kind="show" id="1ay-MH-nIJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duF-Xa-uCE">
+                                <rect key="frame" x="132" y="268" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2DM-qr-7Jk"/>
+                                    <constraint firstAttribute="width" constant="150" id="d8f-Mn-Byr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U8h-qc-LkB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6RR-hN-PQH"/>
+                            <constraint firstItem="S0f-BG-0LR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KeM-Mv-aOv"/>
+                            <constraint firstItem="duF-Xa-uCE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayg-zR-FLh"/>
+                            <constraint firstItem="S0f-BG-0LR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cBp-bU-XXc"/>
+                            <constraint firstItem="duF-Xa-uCE" firstAttribute="top" secondItem="S0f-BG-0LR" secondAttribute="bottom" constant="100" id="y6X-nJ-teR"/>
+                            <constraint firstItem="U8h-qc-LkB" firstAttribute="top" secondItem="duF-Xa-uCE" secondAttribute="bottom" constant="100" id="yA3-6v-rmB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textName" destination="duF-Xa-uCE" id="wQE-6C-wyA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
+        </scene>
+        <!--Hello Name View Controller-->
+        <scene sceneID="8vs-cS-eI0">
+            <objects>
+                <viewController id="n24-ot-Md8" customClass="HelloNameViewController" customModule="SecondKadaiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqs-yh-3gN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH2-dZ-Szf">
+                                <rect key="frame" x="185" y="150" width="44" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-oS-zDs">
+                                <rect key="frame" x="179" y="321.5" width="56" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="28"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="dfT-69-TjU" kind="unwind" unwindAction="unwind:" id="zx5-fN-puu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TB5-Wu-PVH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JH2-dZ-Szf" firstAttribute="top" secondItem="TB5-Wu-PVH" secondAttribute="top" constant="150" id="DIA-Sz-eBw"/>
+                            <constraint firstItem="Kae-oS-zDs" firstAttribute="centerX" secondItem="eqs-yh-3gN" secondAttribute="centerX" id="Fei-Nq-eAJ"/>
+                            <constraint firstItem="Kae-oS-zDs" firstAttribute="top" secondItem="JH2-dZ-Szf" secondAttribute="bottom" constant="150" id="QMH-jc-u0T"/>
+                            <constraint firstItem="JH2-dZ-Szf" firstAttribute="centerX" secondItem="eqs-yh-3gN" secondAttribute="centerX" id="t7E-Oq-jcB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dTY-xg-nLJ"/>
+                    <connections>
+                        <outlet property="label" destination="JH2-dZ-Szf" id="d2o-k6-6R2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZP-qN-iS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dfT-69-TjU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
